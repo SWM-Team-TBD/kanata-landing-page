@@ -8,6 +8,7 @@ import todayCallImg from "@/assets/today-call.png";
 import startScreenImg from "@/assets/start-screen.png";
 import questCompleteImg from "@/assets/quest-complete.png";
 import logoImg from "@/assets/logo.png";
+import layer3Img from "@/assets/layer-3.png";
 import { initPostHog, initScrollTracking, trackDownloadClick, trackWebTrialClick, trackPageView, trackButtonClick } from "@/lib/analytics";
 
 const Index = () => {
@@ -83,7 +84,7 @@ const Index = () => {
             {/* Hero Image */}
             <div className="relative aspect-[3/4] w-full max-w-[500px] mx-auto order-first lg:order-last">
               <img
-                src="/src/assets/layer-3.png"
+                src={layer3Img}
                 alt="Kanata character"
                 className="w-full h-full object-contain"
               />
