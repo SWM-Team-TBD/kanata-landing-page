@@ -194,19 +194,10 @@ const Index = () => {
               </div>
               <div className="order-1 md:order-2">
                 <div className="relative">
-                  {/* iPhone Mockup Frame */}
                   <div className="relative mx-auto" style={{
                   maxWidth: "320px"
                 }}>
-                    <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-[3rem]" />
-                    <div className="relative bg-gray-400 rounded-[3rem] p-3 shadow-2xl">
-                      {/* Notch */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-400 rounded-b-3xl z-10" />
-                      {/* Screen */}
-                      <div className="relative rounded-[2.2rem] overflow-hidden bg-background">
-                        <img src={callScreenImg} alt="Live2D Character Conversation" className="w-full h-auto" />
-                      </div>
-                    </div>
+                    <img src={callScreenImg} alt="Live2D Character Conversation"/>
                   </div>
                 </div>
               </div>
@@ -216,19 +207,10 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
               <div>
                 <div className="relative">
-                  {/* iPhone Mockup Frame */}
                   <div className="relative mx-auto" style={{
                   maxWidth: "320px"
                 }}>
-                    <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-[3rem]" />
-                    <div className="relative bg-gray-400 rounded-[3rem] p-3 shadow-2xl">
-                      {/* Notch */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-400 rounded-b-3xl z-10" />
-                      {/* Screen */}
-                      <div className="relative rounded-[2.2rem] overflow-hidden bg-background">
-                        <img src={todayCallImg} alt="Daily Learning Progress" className="w-full h-auto" />
-                      </div>
-                    </div>
+                    <img src={todayCallImg} alt="Daily Learning Progress"/>
                   </div>
                 </div>
               </div>
@@ -279,19 +261,10 @@ const Index = () => {
               </div>
               <div className="order-1 md:order-2">
                 <div className="relative">
-                  {/* iPhone Mockup Frame */}
                   <div className="relative mx-auto" style={{
                   maxWidth: "320px"
                 }}>
-                    <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-[3rem]" />
-                    <div className="relative bg-gray-400 rounded-[3rem] p-3 shadow-2xl">
-                      {/* Notch */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-400 rounded-b-3xl z-10" />
-                      {/* Screen */}
-                      <div className="relative rounded-[2.2rem] overflow-hidden bg-background">
-                        <img src={callResultImg} alt="Conversation Feedback" className="w-full h-auto" />
-                      </div>
-                    </div>
+                    <img src={callResultImg} alt="Conversation Feedback"/>
                   </div>
                 </div>
               </div>
