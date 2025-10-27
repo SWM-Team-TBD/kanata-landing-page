@@ -5,25 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export type Platform = "ios" | "android" | "web";
+export function openKanataApp() {
+  const userAgent = navigator.userAgent || navigator.vendor || "";
+  const isMobile = /android|iPad|iPhone|iPod/i.test(userAgent);
 
-export function detectPlatform(): Platform {
-  if (typeof window === "undefined") {
-    return "web";
-  }
+  const url = isMobile
+    ? "https://kanata.onelink.me/dYmZ/vukegfoa"
+    : "https://kanata.live";
 
-  const userAgent = window.navigator.userAgent.toLowerCase();
-
-  // iOS 감지
-  if (/iphone|ipad|ipod/.test(userAgent)) {
-    return "ios";
-  }
-
-  // Android 감지
-  if (/android/.test(userAgent)) {
-    return "android";
-  }
-
-  // 그 외는 웹(데스크탑)으로 처리
-  return "web";
+  window.open(url, "_blank");
 }

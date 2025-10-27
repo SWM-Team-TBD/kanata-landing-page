@@ -1,45 +1,10 @@
-import { useEffect, useState } from "react";
-import { detectPlatform, type Platform } from "@/lib/utils";
-import { trackButtonClick, trackWebTrialClick } from "@/lib/analytics";
+import { openKanataApp } from "@/lib/utils";
+import { trackButtonClick } from "@/lib/analytics";
 
-interface StartButtonProps {
-  onStart?: () => void;
-}
-
-export const StartButton = ({ onStart }: StartButtonProps) => {
-  const [platform, setPlatform] = useState<Platform>("web");
-
-  useEffect(() => {
-    setPlatform(detectPlatform());
-  }, []);
-
+export const StartButton = () => {
   const handleClick = () => {
-    // switch (platform) {
-    //   case "ios":
-    //     trackButtonClick("start_ios", "cta_section");
-    //     // iOS App Store URL (준비중)
-    //     // window.open("https://apps.apple.com/...", "_blank");
-    //     break;
-    //   case "android":
-    //     trackButtonClick("start_android", "cta_section");
-    //     // Google Play Store URL (준비중)
-    //     // window.open("https://play.google.com/store/apps/...", "_blank");
-    //     break;
-    //   case "web":
-    //     trackButtonClick("start_web", "cta_section");
-    //     if (onStart) {
-    //       onStart();
-    //     } else {
-    //       window.open("https://kanata.live", "_blank");
-    //     }
-    //     break;
-    // }
-    trackButtonClick("start_web", "cta_section");
-    if (onStart) {
-      onStart();
-    } else {
-      window.open("https://kanata.live", "_blank");
-    }
+    trackButtonClick("start_btn", "cta_section");
+    openKanataApp();
   };
 
   return (

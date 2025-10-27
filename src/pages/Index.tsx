@@ -2,7 +2,6 @@ import { MessageCircle, CheckCircle2, Star, TrendingUp } from "lucide-react";
 import { useEffect } from "react";
 import callResultImg from "@/assets/call-result.png";
 import callScreenImg from "@/assets/call-screen.png";
-import todayCallImg from "@/assets/today-call.png";
 import homeImg from "@/assets/home.png";
 import questImg from "@/assets/quest.png";
 import {
@@ -24,13 +23,9 @@ const Index = () => {
     };
   }, []);
 
-  const handleWebTrial = () => {
-    window.open("https://kanata.live", "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      <Header onWebTrial={handleWebTrial} />
+      <Header />
 
       {/* Hero Section */}
       <section className="w-full min-h-screen overflow-hidden relative flex items-center pt-20 md:pt-0">
@@ -75,7 +70,7 @@ const Index = () => {
                 </div>
 
                 <div className="flex flex-row gap-2 md:gap-3 items-center justify-start pt-2 max-w-xl">
-                  <StartButton onStart={handleWebTrial} />
+                  <StartButton />
                 </div>
               </div>
 
@@ -278,7 +273,7 @@ const Index = () => {
             </p>
 
             <div className="flex flex-row gap-2 md:gap-3 items-center justify-center pt-2 max-w-xl mx-auto">
-              <StartButton onStart={handleWebTrial} />
+              <StartButton />
             </div>
 
             <div className="mt-12 md:mt-20 relative max-w-3xl mx-auto">
