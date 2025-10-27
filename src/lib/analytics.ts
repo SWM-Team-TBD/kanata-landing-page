@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+import { DeviceType, Platform } from "./utils";
 
 // Initialize PostHog
 export function initPostHog() {
@@ -46,6 +47,41 @@ export const trackButtonClick = (
     };
     posthog.capture("button_clicked", eventData);
     console.log("[PostHog] Button click tracked:", eventData);
+  }
+};
+
+/**
+ * 앱 열기 이벤트 추적
+ */
+export const trackAppOpen = (deviceType: DeviceType, platform?: Platform) => {
+  if (typeof window !== "undefined" && posthog) {
+    const eventData = {
+      device_type: deviceType,
+      platform: platform,
+      timestamp: new Date().toISOString(),
+    };
+    posthog.capture("app_open_attempted", eventData);
+    console.log("[PostHog] App open tracked:", eventData);
+  }
+};
+
+/**
+ * 외부 링크 클릭 이벤트 추적
+ */
+export const trackExternalLinkClick = (
+  linkName: string,
+  url: string,
+  location: string = "footer"
+) => {
+  if (typeof window !== "undefined" && posthog) {
+    const eventData = {
+      link_name: linkName,
+      destination_url: url,
+      location,
+      timestamp: new Date().toISOString(),
+    };
+    posthog.capture("external_link_clicked", eventData);
+    console.log("[PostHog] External link click tracked:", eventData);
   }
 };
 

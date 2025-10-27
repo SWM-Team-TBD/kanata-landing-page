@@ -70,7 +70,7 @@ const Index = () => {
                 </div>
 
                 <div className="flex flex-row gap-2 md:gap-3 items-center justify-start pt-2 max-w-xl">
-                  <StartButton />
+                  <StartButton location="hero" />
                 </div>
               </div>
 
@@ -273,7 +273,7 @@ const Index = () => {
             </p>
 
             <div className="flex flex-row gap-2 md:gap-3 items-center justify-center pt-2 max-w-xl mx-auto">
-              <StartButton />
+              <StartButton location="final_cta" />
             </div>
 
             <div className="mt-12 md:mt-20 relative max-w-3xl mx-auto">
