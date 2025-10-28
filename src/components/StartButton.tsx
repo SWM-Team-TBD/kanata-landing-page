@@ -7,14 +7,27 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 interface StartButtonProps {
   location: string;
 }
 
 export const StartButton = ({ location }: StartButtonProps) => {
+  const { toast } = useToast();
+
   const handleClick = (platform?: Platform) => {
     trackButtonClick("start_btn", location);
+
+    if (platform === "android") {
+      toast({
+        title: "출시 준비 중",
+        description: "안드로이드 앱은 현재 출시 준비 중입니다.",
+      });
+
+      return;
+    }
+
     openKanataApp(platform);
   };
 

@@ -8,25 +8,32 @@ export function cn(...inputs: ClassValue[]) {
 
 export type Platform = "android" | "ios" | "web" | "auto";
 
-export type DeviceType = "mobile" | "desktop";
+export type DeviceType = "android" | "ios" | "desktop";
 
+// TODO: 안드로이드 출시 후 ONE_LINK 연결
 const ONE_LINK = "https://kanata.onelink.me/dYmZ/vukegfoa";
 
 export function getPlatformUrl(platform: Platform): string {
   switch (platform) {
-    case "android":
-      return ONE_LINK;
     case "ios":
       return ONE_LINK;
-    case "web":
+    default:
       return "https://kanata.live";
   }
 }
 
-function getDeviceType() {
+function getDeviceType(): DeviceType {
   const userAgent = navigator.userAgent || navigator.vendor || "";
-  const isMobile = /android|iPad|iPhone|iPod/i.test(userAgent);
-  return isMobile ? "mobile" : "desktop";
+
+  if (/android/i.test(userAgent)) {
+    return "android";
+  }
+
+  if (/iPad|iPhone|iPod/i.test(userAgent)) {
+    return "ios";
+  }
+
+  return "desktop";
 }
 
 export function openKanataApp(platform?: Platform) {
@@ -36,7 +43,7 @@ export function openKanataApp(platform?: Platform) {
   if (platform) {
     url = getPlatformUrl(platform);
   } else {
-    url = deviceType === "mobile" ? ONE_LINK : "https://kanata.live";
+    url = deviceType === "ios" ? ONE_LINK : "https://kanata.live";
   }
 
   trackAppOpen(deviceType, platform);
