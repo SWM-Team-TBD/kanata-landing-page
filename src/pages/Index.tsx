@@ -1,17 +1,21 @@
 import { MessageCircle, CheckCircle2, Star, TrendingUp } from "lucide-react";
 import { useEffect } from "react";
-import callResultImg from "@/assets/call-result.png";
-import callScreenImg from "@/assets/call-screen.png";
-import homeImg from "@/assets/home.png";
-import questImg from "@/assets/quest.png";
+import callResultImg from "@/assets/call-result.webp";
+import callScreenImg from "@/assets/call-screen.webp";
+import homeImg from "@/assets/home.webp";
+import questImg from "@/assets/quest.webp";
 import {
   initPostHog,
   initScrollTracking,
   trackPageView,
+  trackExternalLinkClick,
 } from "@/lib/analytics";
 import { StartButton } from "@/components/StartButton";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { XIcon } from "@/components/icons/XIcon";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
 const Index = () => {
   useEffect(() => {
@@ -274,6 +278,62 @@ const Index = () => {
 
             <div className="flex flex-row gap-2 md:gap-3 items-center justify-center pt-2 max-w-xl mx-auto">
               <StartButton location="final_cta" />
+            </div>
+
+            <div className="mt-12 md:mt-16 flex flex-col items-center gap-6">
+              <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
+                카나타의 최신 소식을 팔로우하세요
+              </p>
+              <div className="flex items-center gap-4 md:gap-6">
+                <a
+                  href="https://www.youtube.com/@kanata_edu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackExternalLinkClick(
+                      "youtube",
+                      "https://www.youtube.com/@kanata_edu",
+                      "final_cta"
+                    )
+                  }
+                  className="group p-3 rounded-xl bg-primary/10 hover:bg-primary/20 transition-all duration-300"
+                  aria-label="YouTube"
+                >
+                  <YoutubeIcon className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                </a>
+                <a
+                  href="https://x.com/kanata_edu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackExternalLinkClick(
+                      "x",
+                      "https://x.com/kanata_edu",
+                      "final_cta"
+                    )
+                  }
+                  className="group p-3 rounded-xl bg-primary/10 hover:bg-primary/20 transition-all duration-300"
+                  aria-label="X (Twitter)"
+                >
+                  <XIcon className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                </a>
+                <a
+                  href="https://www.instagram.com/kanata_edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackExternalLinkClick(
+                      "instagram",
+                      "https://www.instagram.com/kanata_edu/",
+                      "final_cta"
+                    )
+                  }
+                  className="group p-3 rounded-xl bg-primary/10 hover:bg-primary/20 transition-all duration-300"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                </a>
+              </div>
             </div>
 
             <div className="mt-12 md:mt-20 relative max-w-3xl mx-auto">

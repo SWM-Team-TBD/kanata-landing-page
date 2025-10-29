@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/logo.webp";
 import { openKanataApp } from "@/lib/utils";
 import { trackButtonClick } from "@/lib/analytics";
 

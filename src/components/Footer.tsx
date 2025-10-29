@@ -1,4 +1,4 @@
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/logo.webp";
 import { trackExternalLinkClick } from "@/lib/analytics";
 
 const PRIVACY_POLICY_URL =
@@ -20,7 +20,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <img src={logoImg} alt="Kanata" className="h-5 md:h-6" />
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
             <a
               href={PRIVACY_POLICY_URL}
               target="_blank"
