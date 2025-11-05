@@ -4,7 +4,7 @@ import { openKanataApp } from "@/lib/utils";
 import { trackButtonClick } from "@/lib/analytics";
 
 export const Header = () => {
-  const handleClick = () => {
+  const handleClick = async () => {
     trackButtonClick("start_btn", "header");
     openKanataApp();
   };

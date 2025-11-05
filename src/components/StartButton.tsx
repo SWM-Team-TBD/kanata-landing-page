@@ -16,7 +16,7 @@ interface StartButtonProps {
 export const StartButton = ({ location }: StartButtonProps) => {
   const { toast } = useToast();
 
-  const handleClick = (platform?: Platform) => {
+  const handleClick = async (platform?: Platform) => {
     trackButtonClick("start_btn", location);
 
     if (platform === "android") {
@@ -28,7 +28,7 @@ export const StartButton = ({ location }: StartButtonProps) => {
       return;
     }
 
-    openKanataApp(platform);
+    await openKanataApp(platform);
   };
 
   return (
