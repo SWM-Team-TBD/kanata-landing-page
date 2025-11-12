@@ -7,19 +7,35 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export type Platform = "android" | "ios" | "web" | "auto";
+export type Platform = "android" | "ios" | "web";
 
 export type DeviceType = "android" | "ios" | "desktop";
 
-// TODO: 안드로이드 출시 후 ONE_LINK 연결
-const ONE_LINK = "https://kanata.onelink.me/dYmZ/vukegfoa";
+const IOS_LINK =
+  "https://apps.apple.com/kr/app/%EC%B9%B4%EB%82%98%ED%83%80-%EC%9D%BC%EB%B3%B8%EC%96%B4-ai-%ED%94%84%EB%A6%AC%ED%86%A0%ED%82%B9/id6754448960";
+const ANDROID_LINK =
+  "https://play.google.com/store/apps/details?id=tbd.team.swm.kanataapp";
+const WEB_LINK = "https://kanata.live";
 
-export function getPlatformUrl(platform: Platform): string {
+export function getUrlFromPlatform(platform: Platform): string {
   switch (platform) {
     case "ios":
-      return ONE_LINK;
-    default:
-      return "https://kanata.live";
+      return IOS_LINK;
+    case "android":
+      return ANDROID_LINK;
+    case "web":
+      return WEB_LINK;
+  }
+}
+
+export function getUrlFromDeviceType(deviceType: DeviceType): string {
+  switch (deviceType) {
+    case "ios":
+      return IOS_LINK;
+    case "android":
+      return ANDROID_LINK;
+    case "desktop":
+      return WEB_LINK;
   }
 }
 
@@ -56,9 +72,9 @@ export async function openKanataApp(platform?: Platform) {
   let url: string;
 
   if (platform) {
-    url = getPlatformUrl(platform);
+    url = getUrlFromPlatform(platform);
   } else {
-    url = deviceType === "ios" ? ONE_LINK : "https://kanata.live";
+    url = getUrlFromDeviceType(deviceType);
   }
 
   trackAppOpen(deviceType, platform);
