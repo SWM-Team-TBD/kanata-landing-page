@@ -34,7 +34,10 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full min-h-[100dvh] overflow-hidden relative flex items-center pt-20 md:pt-0 bg-white">
+      <section
+        className="w-full min-h-[100dvh] overflow-hidden relative flex items-center pt-20 md:pt-0 bg-white"
+        aria-label="메인 소개"
+      >
         {/* Background gradient - subtle and natural */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[80vw] h-[80vw] bg-blue-50/50 rounded-full blur-[100px]"></div>
@@ -101,6 +104,7 @@ const Index = () => {
       <section
         id="features"
         className="py-20 md:py-32 lg:py-40 bg-gray-50 relative overflow-hidden"
+        aria-label="주요 기능"
       >
         <div className="container mx-auto px-5 md:px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -297,6 +301,7 @@ const Index = () => {
       <section
         id="download"
         className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-gray-900"
+        aria-label="앱 다운로드"
       >
         <div className="container mx-auto px-5 md:px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center">

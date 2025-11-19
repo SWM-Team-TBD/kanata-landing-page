@@ -15,7 +15,10 @@ const stats = [
 
 export const StatsSection = () => {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gray-100 relative overflow-hidden">
+    <section
+      className="py-16 md:py-24 lg:py-32 bg-gray-100 relative overflow-hidden"
+      aria-label="주요 통계"
+    >
       <div className="container mx-auto px-5 md:px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

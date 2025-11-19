@@ -29,7 +29,10 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section className="py-20 md:py-32 lg:py-40 bg-gray-900 relative overflow-hidden">
+    <section
+      className="py-20 md:py-32 lg:py-40 bg-gray-900 relative overflow-hidden"
+      aria-label="사용자 후기"
+    >
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20 animate-fade-up px-6">
@@ -39,9 +42,9 @@ export const Testimonials = () => {
             카나타와의 일본어 말하기!
           </h2>
           <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            실제 사용자들이 카나타와 함께 일본어 말하기 실력을 향상시킨
+            실제 사용자들이 카나타와 함께 일본어 말하기 실력을 향상시킨{" "}
             <br className="hidden sm:block" />
-            생생한 후기를 확인해보세요
+            생생한 후기를 확인하세요
           </p>
         </div>
 

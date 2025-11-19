@@ -1,3 +1,14 @@
+# 카나타 - 일본어 회화 AI 학습 서비스
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://landing.kanata.live/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# 특정 봇 최적화
 User-agent: Googlebot
 Allow: /
 
