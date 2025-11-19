@@ -16,11 +16,11 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border/50 py-8 md:py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
-          <img src={logoImg} alt="Kanata" className="h-5 md:h-6" />
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
+    <footer className="border-t border-gray-100 py-12 md:py-16 bg-gray-50">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+          <img src={logoImg} alt="Kanata" className="h-6 md:h-8 opacity-80 hover:opacity-100 transition-opacity" />
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 text-sm text-gray-500">
             <a
               href={PRIVACY_POLICY_URL}
               target="_blank"
@@ -40,8 +40,8 @@ export const Footer = () => {
               이용약관
             </a>
           </div>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            2025 Kanata. All rights reserved.
+          <p className="text-sm text-gray-400">
+            © 2025 Kanata. All rights reserved.
           </p>
         </div>
       </div>

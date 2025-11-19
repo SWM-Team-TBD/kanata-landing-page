@@ -82,11 +82,32 @@ All colors MUST be HSL.
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 239 100% 65%;
+    --popover-foreground: 240 10% 3.9%;
 
-    /* Light theme gradients */
+    --primary: 239 84% 67%; /* Kept the brand blue/purple but checked readability */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 239 84% 67%;
+
+    --radius: 1rem;
+    
+    --shadow-card: 0 20px 40px -10px rgba(0,0,0,0.05);
+    --shadow-glow: 0 0 80px -20px rgba(99, 102, 241, 0.15);
+
     --gradient-primary: linear-gradient(135deg, hsl(239 100% 65%) 0%, hsl(280 100% 70%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(240 5% 98%) 100%);
     
@@ -112,23 +133,60 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
 
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Improved Typography for Korean */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-display;
+    word-break: keep-all;
+  }
+  
+  p {
+    word-break: keep-all;
+  }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500;
+  }
+
+  .text-gradient-premium {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600;
+  }
+
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-200/80 hover:-translate-y-1;
   }
 
   .glow-primary {
     box-shadow: var(--shadow-glow);
   }
 
-  .card-shadow {
-    box-shadow: var(--shadow-card);
+  /* Infinite scroll animation - right to left */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
   }
 }

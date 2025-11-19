@@ -10,21 +10,22 @@ import { ChevronDown } from "lucide-react";
 
 interface StartButtonProps {
   location: string;
+  className?: string;
 }
 
-export const StartButton = ({ location }: StartButtonProps) => {
+export const StartButton = ({ location, className = "" }: StartButtonProps) => {
   const handleClick = async (platform?: Platform) => {
     trackButtonClick("start_btn", location);
     await openKanataApp(platform);
   };
 
   return (
-    <div className="inline-flex shadow-lg rounded-lg">
+    <div className={`inline-flex shadow-lg rounded-lg ${className}`}>
       <button
         onClick={() => handleClick()}
         className="px-8 py-3 md:px-12 md:py-4 bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg rounded-l-lg transition-all"
       >
-        시작하기
+        무료로 시작하기
       </button>
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger asChild>
