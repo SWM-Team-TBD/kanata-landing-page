@@ -79,5 +79,14 @@ export async function openKanataApp(platform?: Platform) {
 
   trackAppOpen(deviceType, platform);
 
-  window.open(url, "_blank");
+  const newWindow = window.open(url, "_blank");
+
+  // 팝업이 차단된 경우 현재 탭에서 이동
+  if (
+    !newWindow ||
+    newWindow.closed ||
+    typeof newWindow.closed === "undefined"
+  ) {
+    window.location.href = url;
+  }
 }
